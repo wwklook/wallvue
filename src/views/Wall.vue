@@ -33,7 +33,7 @@ import ImgItem from "@/components/ImgItem.vue";
 import Pagination from "@/components/Pagination.vue";
 
 export default {
-  name: "Home",
+  name: "Wall",
   components: { ImgItem, Pagination },
   data() {
     return {
@@ -56,7 +56,7 @@ export default {
     handleSelect(tab) {
       if (this.$route.params.id == tab) return;
       this.activeIndex = tab;
-      this.$router.push("/category/" + tab);
+      this.$router.push("/wall/" + tab);
       this.getImgList(this.category_list[tab].wall_url);
     },
     getImgList(url) {

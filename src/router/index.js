@@ -3,27 +3,32 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+const Block = () => import('@/views/Block.vue')
 const BZ = () => import('@/views/BZ.vue')
-const Home = () => import('@/views/Home.vue')
+const Wall = () => import('@/views/Wall.vue')
 
 const routes = [
   {
     path: '/',
-    redirect: '/category/0'
+    redirect: '/wall/0'
   },
   {
-    path: '/category',
-    redirect: '/category/0'
+    path: '/wall',
+    component: Block,
+    redirect: '/wall/0',
+    children: [
+      {
+        path: ':id',
+        name: 'Wall',
+        component: Wall
+      }, {
+        path: 'bz',
+        name: 'BZ',
+        component: BZ
+      }
+    ]
   },
-  {
-    path: '/category/:id',
-    name: 'Home',
-    component: Home
-  }, {
-    path: '/bz',
-    name: 'BZ',
-    component: BZ
-  }
+
 ]
 
 const router = new VueRouter({
