@@ -78,6 +78,4 @@ export default {
 .el-menu-demo {
   margin: 0 10px;
 }
-.home {
-}
 </style>
