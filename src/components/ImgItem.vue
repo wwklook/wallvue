@@ -2,7 +2,12 @@
   <div class="img-page">
     <ul class="img-ul">
       <li v-for="item in img_list" :key="item.href">
-        <img :src="item.img" :alt="item.name" @click="toBZ(item.href)" />
+        <img
+          :src="item.img"
+          :alt="item.name"
+          @click="toBZ(item.href)"
+          referrer="no-referrer|origin|unsafe-url"
+        />
         <div class="img-name">
           <span @click="toBZ(item.href)">{{ item.name }}</span>
         </div>
@@ -31,7 +36,7 @@ h3 {
 .img-page {
   .img-ul {
     padding: 0;
-    
+
     li {
       display: inline-block;
       margin: 10px 20px 40px;

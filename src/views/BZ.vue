@@ -12,7 +12,11 @@
       <img :src="data.img1400" :alt="data.title" />
       <ul>
         <li v-for="(item, key) in pics" :key="key">
-          <img :src="item" @click="changeImg(key)" />
+          <img
+            :src="item"
+            @click="changeImg(key)"
+            referrer="no-referrer|origin|unsafe-url"
+          />
           {{ key + 1 }}/{{ pics.length }}
         </li>
       </ul>
